@@ -1,0 +1,48 @@
+<html>
+	<head>
+		
+	</head>
+
+	<body>
+			<h1>DNA molecular weight calculator</h1>
+			<textarea></textarea>
+			<button>calculate</button>
+			
+			<div>
+				<span></span><span> Dalton</span>
+			</div>
+
+			<script type="text/javascript">
+				var A = 0,T = 0,G = 0,C = 0;
+				var input = document.querySelector('textarea');
+				var result = document.querySelector('span');
+				var button = document.querySelector('button')
+
+				button.onclick = function(){
+
+					A = 0;T = 0;G = 0;C = 0;
+					
+					var sequence = input.value;
+
+					for (var i = 0; i < sequence.length; i++) {
+						
+						if (sequence[i] == 'a' || sequence[i] == 'A'){
+							A++;
+						}else if (sequence[i] == 'T' || sequence[i] == 't') {
+							T++;
+						}else if (sequence[i] == 'G' || sequence[i] == 'g') {
+							G++;
+						}else if (sequence[i] == 'C' || sequence[i] == 'c') {
+							C++;
+						}else {
+							
+						}
+
+					}
+
+					result.textContent = A*331.2 + T*322.2 + G*347.2 + C*307.2
+
+				}
+			</script>
+	</body>
+</html>
